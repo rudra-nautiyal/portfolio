@@ -1,0 +1,38 @@
+/* CUSTOM FONT */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+/* GENERAL */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent; /* Disables the highlight effect that appears when a user taps on an element in mobile browsers (especially in WebKit-based browsers like Chrome and Safari on iOS/Android). */
+}
+
+h1,
+h2,
+h5,
+p {
+  margin: 0;
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
+}
+
+/* HERO */
+
+#hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
