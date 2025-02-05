@@ -59,8 +59,12 @@ function playClosingAnimation(reverseAnimation) {}
 // ON CLICK CORNER BUTTON FUNCTION
 tlBtn.onclick = function () {
   if (activeCorner === "top-left") {
-    playClosingAnimation();
+    playClosingAnimation("reverse-animate-top-left");
   } else {
+    trBtn.innerHTML = "Experience";
+    blBtn.innerHTML = "Projects";
+    brBtn.innerHTML = "Contact";
+
     // SETTING THE ACTIVE CORNER
     activeCorner = "top-left";
     tlBtn.innerHTML = "&uarr;<br/>About";
@@ -87,5 +91,116 @@ tlBtn.onclick = function () {
     brContent.style.transform = brHidden;
     blContent.style.transform = blHidden;
     tlContent.style.transform = tlActive;
+  }
+};
+
+trBtn.onclick = function () {
+  if (activeCorner === "top-right") {
+    playClosingAnimation("reverse-animate-top-right");
+  } else {
+    tlBtn.innerHTML = "About";
+    blBtn.innerHTML = "Projects";
+    brBtn.innerHTML = "Contact";
+
+    // SETTING THE ACTIVE CORNER
+    activeCorner = "top-right";
+    trBtn.innerHTML = "&uarr;<br/>Experience";
+
+    handleWindowResize();
+    playAnimation("animate-top-right", "reverse-animate-top-right");
+
+    // CHANGE BACKGROUND COLOR
+    trBtn.style.background = bgColorAlt;
+    brBtn.style.background = bgColor;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColor;
+
+    // CHANGE TEXT COLOR
+
+    trBtn.style.color = textColorAlt;
+    brBtn.style.color = textColor;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColor;
+
+    // CHANGE POSITION OF CORNER CONTENT
+
+    trContent.style.transform = tlActive;
+    brContent.style.transform = brHidden;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlHidden;
+  }
+};
+
+blBtn.onclick = function () {
+  if (activeCorner === "bottom-left") {
+    playClosingAnimation("reverse-animate-bottom-left");
+  } else {
+    tlBtn.innerHTML = "About";
+    trBtn.innerHTML = "Experience";
+    brBtn.innerHTML = "Contact";
+
+    // SETTING THE ACTIVE CORNER
+    activeCorner = "bottom-left";
+    blBtn.innerHTML = "Projects<br/>&darr;";
+
+    handleWindowResize();
+    playAnimation("animate-bottom-left", "reverse-animate-bottom-left");
+
+    // CHANGE BACKGROUND COLOR
+    trBtn.style.background = bgColor;
+    brBtn.style.background = bgColor;
+    blBtn.style.background = bgColorAlt;
+    tlBtn.style.background = bgColor;
+
+    // CHANGE TEXT COLOR
+
+    trBtn.style.color = textColor;
+    brBtn.style.color = textColor;
+    blBtn.style.color = textColorAlt;
+    tlBtn.style.color = textColor;
+
+    // CHANGE POSITION OF CORNER CONTENT
+
+    trContent.style.transform = tlHidden;
+    brContent.style.transform = brHidden;
+    blContent.style.transform = blActive;
+    tlContent.style.transform = tlHidden;
+  }
+};
+
+brBtn.onclick = function () {
+  if (activeCorner === "bottom-right") {
+    playClosingAnimation("reverse-animate-bottom-right");
+  } else {
+    tlBtn.innerHTML = "About";
+    trBtn.innerHTML = "Experience";
+    blBtn.innerHTML = "Projects";
+
+    // SETTING THE ACTIVE CORNER
+    activeCorner = "bottom-right";
+    brBtn.innerHTML = "Contact<br/>&darr;";
+
+    handleWindowResize();
+    playAnimation("animate-bottom-right", "reverse-animate-bottom-right");
+
+    // CHANGE BACKGROUND COLOR
+    trBtn.style.background = bgColor;
+    brBtn.style.background = bgColorAlt;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColor;
+
+    // CHANGE TEXT COLOR
+
+    trBtn.style.color = textColor;
+    brBtn.style.color = textColorAlt;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColor;
+
+    // CHANGE POSITION OF CORNER CONTENT
+
+    trContent.style.transform = tlHidden;
+    brContent.style.transform = brActive;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlHidden;
   }
 };
