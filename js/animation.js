@@ -37,3 +37,55 @@ let blHidden = "translateX(-100vw) translateY(100vh)";
 
 let brActive = "translate(-5vw) translateY(0)";
 let brHidden = "translateX(100vw) translateY(100vh)";
+
+// DEFINE CORNER THAT IS OPEN
+let activeCorner = "";
+
+// ADD EVENT LISTENER TO THE WINDOW OBJECT TO LISTEN FOR RESIZE EVENTS
+window.addEventListener("resize", handleWindowResize);
+
+// FUNCTION THAT HANDLES THE STYLING THE RESIZING WINDOW
+function handleWindowResize() {}
+
+// STORE LAST REVERSE ANIMATION, READY TO BE PLAYED
+let lastReverseAnimation = "";
+
+// PLAY ANIMATION FUNCTION
+
+function playAnimation(animation, reverseAnimation) {}
+
+function playClosingAnimation(reverseAnimation) {}
+
+// ON CLICK CORNER BUTTON FUNCTION
+tlBtn.onclick = function () {
+  if (activeCorner === "top-left") {
+    playClosingAnimation();
+  } else {
+    // SETTING THE ACTIVE CORNER
+    activeCorner = "top-left";
+    tlBtn.innerHTML = "&uarr;<br/>About";
+
+    handleWindowResize();
+    playAnimation("animate-top-left", "reverse-animate-top-left");
+
+    // CHANGE BACKGROUND COLOR
+    trBtn.style.background = bgColor;
+    brBtn.style.background = bgColor;
+    blBtn.style.background = bgColor;
+    tlBtn.style.background = bgColorAlt;
+
+    // CHANGE TEXT COLOR
+
+    trBtn.style.color = textColor;
+    brBtn.style.color = textColor;
+    blBtn.style.color = textColor;
+    tlBtn.style.color = textColorAlt;
+
+    // CHANGE POSITION OF CORNER CONTENT
+
+    trContent.style.transform = tlHidden;
+    brContent.style.transform = brHidden;
+    blContent.style.transform = blHidden;
+    tlContent.style.transform = tlActive;
+  }
+};
