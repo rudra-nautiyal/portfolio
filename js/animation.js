@@ -52,7 +52,12 @@ let lastReverseAnimation = "";
 
 // PLAY ANIMATION FUNCTION
 
-function playAnimation(animation, reverseAnimation) {}
+function playAnimation(animation, reverseAnimation) {
+  if (lastReverseAnimation !== "") {
+  } else {
+    
+  }
+}
 
 function playClosingAnimation(reverseAnimation) {}
 
